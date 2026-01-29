@@ -3,10 +3,14 @@
 
 # JUnitTest
 
+What's been done. 
 
+Tests are in the src/test/.example folder
 
+```bash
 Logger -done
 
 AccountNumberGenerator -done
 
 Working on last two methods
+```
