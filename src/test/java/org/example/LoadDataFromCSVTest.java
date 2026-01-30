@@ -55,8 +55,8 @@ class LoadDataFromCSVTest {
     void loadDataFromCSV_readsCustomerAndAccount() throws Exception {
         // make test CSV file
         try (PrintWriter writer = new PrintWriter(new FileWriter(TEST_FILE))) {
-            writer.println("C,C1,Alice");
-            writer.println("A,C1,P,12345,00-11-22,100.00");
+            writer.println("C,C1,Christina");
+            writer.println("A,C1,P,12345,60-60-60,100.00");
         }
 
         BankSystemMinimal bank = new BankSystemMinimal();
@@ -66,14 +66,14 @@ class LoadDataFromCSVTest {
         assertEquals(1, bank.customerMap.size());
         Customer customer = bank.customerMap.get("C1");
         assertNotNull(customer);
-        assertEquals("Alice", customer.getName());
+        assertEquals("Christina", customer.getName());
 
         // account was loaded too
         assertEquals(1, customer.getAccounts().size());
         Account account = customer.getAccount("12345");
         assertNotNull(account);
         assertEquals("12345", account.getAccountNumber());
-        assertEquals("00-11-22", account.sortCode);
+        assertEquals("60-60-60", account.sortCode);
         assertEquals(100.00, account.balance, 0.001);
     }
 }
