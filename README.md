@@ -3,9 +3,9 @@
 
 # JUnitTest
 
-What's been done. 
+## What has been done
 
-Tests are in the src/test/.example folder
+Tests are in this folder: /src/test/java/org/example/ 
 
 ```bash
 -  saveDataToCSV()
