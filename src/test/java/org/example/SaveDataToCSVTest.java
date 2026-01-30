@@ -47,10 +47,10 @@ class SaveDataToCSVTest {
         BankSystemMinimal bank = new BankSystemMinimal();
 
         // test customer and account
-        Customer customer = new Customer("C1", "Alice");
+        Customer customer = new Customer("C1", "Christina");
         Account account = new PersonalAccount();
         account.assignIdentifiers();
-        account.balance = 100.0;
+        account.balance = 1000.0;
         customer.addAccount(account);
         bank.customerMap.put(customer.getId(), customer);
 
@@ -63,7 +63,7 @@ class SaveDataToCSVTest {
         // file contents
         List<String> lines = Files.readAllLines(Path.of(TEST_FILE));
         assertEquals(2, lines.size());
-        assertTrue(lines.get(0).startsWith("C,C1,Alice"));
+        assertTrue(lines.get(0).startsWith("C,C1,Christina"));
         assertTrue(lines.get(1).startsWith("A,C1,P,"));
     }
 }

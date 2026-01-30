@@ -35,8 +35,8 @@ class LoggerTest {
         String line = lines.get(0);
 
         //  starts with YYYY-MM-DD HH:mm:ss
-        assertTrue(line.endsWith(testMessage), "Line should end with message");
-        assertTrue(line.startsWith("["), "Line should start with timestamp");
+        assertTrue(line.endsWith(testMessage), "Line better end with message");
+        assertTrue(line.startsWith("["), "Line must start with timestamp");
         assertTrue(line.contains("] "), "Line should contain closing timestamp bracket");
     }
 
